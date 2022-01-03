@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
+import androidx.core.view.WindowCompat
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -12,15 +13,19 @@ import com.example.romanspirin.vklone.core.navigation.Routes
 import com.example.romanspirin.vklone.core.ui.theme.VKloneTheme
 import com.example.romanspirin.vklone.feed.ui.FeedScreen
 import com.example.romanspirin.vklone.startup.ui.SplashScreen
+import com.google.accompanist.insets.ProvideWindowInsets
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             VKloneTheme {
-                ScreenMain()
+                ProvideWindowInsets {
+                    ScreenMain()
+                }
             }
         }
     }

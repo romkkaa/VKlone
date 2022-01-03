@@ -91,6 +91,9 @@ dependencies {
     // Retrofit
     implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.9.0'
 
+    // JSON Converter
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
     // Dagger - Hilt
     implementation "com.google.dagger:hilt-android:2.38.1"
     kapt "com.google.dagger:hilt-android-compiler:2.37"
@@ -98,8 +101,11 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:1.0.0"
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-rc01'
 
-
     // Insets
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.22.0-rc"
     implementation 'com.google.accompanist:accompanist-insets-ui:0.22.0-rc'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 }
